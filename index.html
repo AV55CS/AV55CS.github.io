@@ -6,12 +6,13 @@
     <title>Avinash Kumar Sharma - Creative Portfolio</title>
     <style>
         :root {
-            --primary: #1e88e5;
-            --secondary: #ff4081;
+            --gradient-start: #4a90e2;
+            --gradient-middle: #834d9b;
+            --gradient-end: #d13a7a;
             --dark: #0d1117;
             --light: #ffffff;
-            --path-color: #2196f3;
-            --gradient: linear-gradient(120deg, #1e88e5, #ff4081);
+            --path-color: rgba(74, 144, 226, 0.8);
+            --bg-gradient: linear-gradient(135deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
         }
 
         body {
@@ -24,7 +25,7 @@
         }
 
         .header {
-            background: var(--gradient);
+            background: var(--bg-gradient);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -40,7 +41,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
 
@@ -48,13 +49,10 @@
             position: relative;
             z-index: 2;
             text-align: center;
-        }
-
-        .profile-container {
             display: flex;
-            align-items: center;
             gap: 2rem;
-            margin-bottom: 2rem;
+            align-items: center;
+            padding: 2rem;
         }
 
         .profile-pic {
@@ -65,51 +63,109 @@
             box-shadow: 0 0 30px rgba(0,0,0,0.3);
         }
 
+        .profile-info {
+            text-align: left;
+        }
+
         .iit-logo {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             object-fit: contain;
+            margin-bottom: 1rem;
         }
 
         .flowing-path {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 300vh;
+            height: 100%;
             pointer-events: none;
+            z-index: 1;
         }
 
         .path {
+            stroke: var(--path-color);
+            stroke-width: 3;
+            fill: none;
+            filter: drop-shadow(0 0 8px rgba(74, 144, 226, 0.5));
             stroke-dasharray: 1000;
             stroke-dashoffset: 1000;
             animation: drawPath 2s forwards;
         }
 
+        .content-section {
+            min-height: 100vh;
+            position: relative;
+            padding: 2rem;
+        }
+
         .journey-point {
             position: absolute;
             padding: 2rem;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
             border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s ease;
             cursor: pointer;
+            max-width: 300px;
         }
 
         .journey-point:hover {
-            transform: translateY(-10px);
-            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+            border-color: var(--gradient-start);
         }
 
         .experience-section {
             left: 10%;
-            top: 120vh;
+            top: 20%;
         }
 
         .skills-section {
             right: 10%;
-            top: 150vh;
+            top: 50%;
+        }
+
+        .hover-box {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding-top: 1rem;
+        }
+
+        .journey-point:hover .hover-box {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0.5rem 0;
+            background: var(--bg-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            background: var(--bg-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .role-item {
+            margin: 1rem 0;
+            padding: 0.5rem;
+            border-left: 2px solid var(--gradient-start);
+            transition: all 0.3s ease;
+        }
+
+        .role-item:hover {
+            background: rgba(74, 144, 226, 0.1);
+            padding-left: 1rem;
         }
 
         @keyframes drawPath {
@@ -118,72 +174,82 @@
             }
         }
 
-        .hover-box {
-            position: absolute;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            padding: 1rem;
-            visibility: hidden;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-info {
+                text-align: center;
+            }
 
-        .journey-point:hover .hover-box {
-            visibility: visible;
-            opacity: 1;
+            .journey-point {
+                position: relative;
+                left: 0;
+                right: 0;
+                margin: 1rem auto;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <svg class="flowing-path" viewBox="0 0 1000 3000">
+        <svg class="flowing-path" viewBox="0 0 1000 2000" preserveAspectRatio="none">
             <path class="path" 
-                  d="M500,0 C500,100 200,200 200,300 S500,400 500,500 S200,600 200,700" 
-                  fill="none" 
-                  stroke="var(--path-color)" 
-                  stroke-width="2"/>
+                  d="M200,0 C500,200 800,400 500,600 S200,800 500,1000 S800,1200 500,1400 S200,1600 500,1800"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
         </svg>
         
         <div class="header-content">
-            <div class="profile-container">
-                <img src="/api/placeholder/200/200" alt="Profile Picture" class="profile-pic">
-                <div>
-                    <img src="/api/placeholder/100/100" alt="IIT Madras Logo" class="iit-logo">
-                    <h1>Avinash Kumar Sharma</h1>
-                    <p>Data Science & AI Researcher | IIT Madras</p>
+            <img src="/api/placeholder/200/200" alt="Profile Picture" class="profile-pic">
+            <div class="profile-info">
+                <img src="/api/placeholder/80/80" alt="IIT Madras Logo" class="iit-logo">
+                <h1>Avinash Kumar Sharma</h1>
+                <p>Data Science & AI Researcher | IIT Madras</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="journey-point experience-section">
+            <h2>Experience Journey</h2>
+            <div class="hover-box">
+                <div class="role-item">
+                    <h3>Current: Research Intern</h3>
+                    <p>Walmart Center of Excellence</p>
+                </div>
+                <div class="role-item">
+                    <h3>Previous Roles</h3>
+                    <p>District Programming Officer</p>
+                    <p>Project Trainee at Neurapses</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="journey-point skills-section">
+            <h2>Technical Arsenal</h2>
+            <div class="hover-box">
+                <div class="role-item">
+                    <h3>Core Skills</h3>
+                    <p>Python | C++ | JavaScript</p>
+                </div>
+                <div class="role-item">
+                    <h3>Expertise</h3>
+                    <p>Machine Learning | Deep Learning</p>
+                    <p>Web Development | Database</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="journey-point experience-section">
-        <h2>Experience Journey</h2>
-        <div class="hover-box">
-            <h3>Current: Research Intern</h3>
-            <p>Walmart Center of Excellence</p>
-            <h3>Previous Roles</h3>
-            <p>District Programming Officer</p>
-            <p>Project Trainee at Neurapses</p>
-        </div>
-    </div>
-
-    <div class="journey-point skills-section">
-        <h2>Technical Arsenal</h2>
-        <div class="hover-box">
-            <p>Python | C++ | JavaScript</p>
-            <p>Machine Learning | Deep Learning</p>
-            <p>Web Development | Database</p>
-        </div>
-    </div>
-
-    <!-- To be continued with:
-    1. Projects section with hover descriptions
-    2. Dataset exploration with flowchart
-    3. ML/DL model hierarchy
-    4. Compression section
-    5. Challenges and workshops
-    6. AI assistance showcase -->
+    <!-- Next sections to be added:
+    1. Projects showcase
+    2. Dataset exploration
+    3. ML/DL hierarchy
+    4. Research & Publications
+    5. Achievements -->
 
 </body>
 </html>
