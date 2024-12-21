@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avinash Kumar Sharma - Creative Portfolio</title>
+    <title>Avinash Kumar Sharma - Portfolio</title>
     <style>
         :root {
             --gradient-start: #4a90e2;
@@ -11,7 +11,6 @@
             --gradient-end: #d13a7a;
             --dark: #0d1117;
             --light: #ffffff;
-            --path-color: rgba(74, 144, 226, 0.8);
             --bg-gradient: linear-gradient(135deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
         }
 
@@ -31,27 +30,18 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.1);
-            z-index: 1;
         }
 
         .header-content {
-            position: relative;
-            z-index: 2;
             text-align: center;
+            z-index: 2;
+        }
+
+        .profile-container {
             display: flex;
-            gap: 2rem;
             align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
             padding: 2rem;
         }
 
@@ -63,159 +53,129 @@
             box-shadow: 0 0 30px rgba(0,0,0,0.3);
         }
 
-        .profile-info {
-            text-align: left;
-        }
-
         .iit-logo {
             width: 80px;
             height: 80px;
-            object-fit: contain;
             margin-bottom: 1rem;
         }
 
-        .flowing-path {
-            position: fixed;
+        .journey-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            gap: 3rem;
+            position: relative;
+        }
+
+        .connecting-line {
+            position: absolute;
+            left: 50%;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, 
+                transparent,
+                var(--gradient-start),
+                var(--gradient-middle),
+                var(--gradient-end),
+                transparent);
+            transform: translateX(-50%);
             z-index: 1;
         }
 
-        .path {
-            stroke: var(--path-color);
-            stroke-width: 3;
-            fill: none;
-            filter: drop-shadow(0 0 8px rgba(74, 144, 226, 0.5));
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: drawPath 2s forwards;
-        }
-
-        .content-section {
-            min-height: 100vh;
-            position: relative;
-            padding: 2rem;
-        }
-
-        .journey-point {
-            position: absolute;
-            padding: 2rem;
+        .flash-card {
             background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
             border-radius: 15px;
+            padding: 2rem;
+            width: 80%;
+            max-width: 600px;
             border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
             cursor: pointer;
-            max-width: 300px;
         }
 
-        .journey-point:hover {
+        .flash-card:hover {
             transform: translateY(-5px);
             background: rgba(255,255,255,0.1);
             border-color: var(--gradient-start);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        .experience-section {
-            left: 10%;
-            top: 20%;
+        .card-title {
+            background: var(--bg-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 1rem 0;
+            font-size: 1.8rem;
         }
 
-        .skills-section {
-            right: 10%;
-            top: 50%;
-        }
-
-        .hover-box {
+        .card-content {
             opacity: 0;
-            visibility: hidden;
+            max-height: 0;
+            overflow: hidden;
             transition: all 0.3s ease;
-            padding-top: 1rem;
         }
 
-        .journey-point:hover .hover-box {
+        .flash-card:hover .card-content {
             opacity: 1;
-            visibility: visible;
+            max-height: 500px;
+            margin-top: 1rem;
+        }
+
+        .role-item {
+            padding: 0.8rem;
+            border-left: 2px solid var(--gradient-start);
+            margin: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .role-item:hover {
+            padding-left: 1.2rem;
+            background: rgba(74, 144, 226, 0.1);
         }
 
         h1 {
             font-size: 2.5rem;
             margin: 0.5rem 0;
-            background: var(--bg-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        h2 {
-            margin: 0;
-            font-size: 1.8rem;
-            background: var(--bg-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .role-item {
-            margin: 1rem 0;
-            padding: 0.5rem;
-            border-left: 2px solid var(--gradient-start);
-            transition: all 0.3s ease;
-        }
-
-        .role-item:hover {
-            background: rgba(74, 144, 226, 0.1);
-            padding-left: 1rem;
-        }
-
-        @keyframes drawPath {
-            to {
-                stroke-dashoffset: 0;
-            }
+            color: var(--light);
         }
 
         @media (max-width: 768px) {
-            .header-content {
+            .profile-container {
                 flex-direction: column;
                 text-align: center;
             }
             
-            .profile-info {
-                text-align: center;
-            }
-
-            .journey-point {
-                position: relative;
-                left: 0;
-                right: 0;
-                margin: 1rem auto;
+            .flash-card {
+                width: 90%;
             }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <svg class="flowing-path" viewBox="0 0 1000 2000" preserveAspectRatio="none">
-            <path class="path" 
-                  d="M200,0 C500,200 800,400 500,600 S200,800 500,1000 S800,1200 500,1400 S200,1600 500,1800"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-        </svg>
-        
         <div class="header-content">
-            <img src="/api/placeholder/200/200" alt="Profile Picture" class="profile-pic">
-            <div class="profile-info">
-                <img src="/api/placeholder/80/80" alt="IIT Madras Logo" class="iit-logo">
-                <h1>Avinash Kumar Sharma</h1>
-                <p>Data Science & AI Researcher | IIT Madras</p>
+            <div class="profile-container">
+                <img src="/api/placeholder/200/200" alt="Profile Picture" class="profile-pic">
+                <div>
+                    <img src="/api/placeholder/80/80" alt="IIT Madras Logo" class="iit-logo">
+                    <h1>Avinash Kumar Sharma</h1>
+                    <p>Data Science & AI Researcher | IIT Madras</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="content-section">
-        <div class="journey-point experience-section">
-            <h2>Experience Journey</h2>
-            <div class="hover-box">
+    <div class="journey-container">
+        <div class="connecting-line"></div>
+
+        <div class="flash-card">
+            <h2 class="card-title">Experience Journey</h2>
+            <div class="card-content">
                 <div class="role-item">
                     <h3>Current: Research Intern</h3>
                     <p>Walmart Center of Excellence</p>
@@ -228,9 +188,9 @@
             </div>
         </div>
 
-        <div class="journey-point skills-section">
-            <h2>Technical Arsenal</h2>
-            <div class="hover-box">
+        <div class="flash-card">
+            <h2 class="card-title">Technical Arsenal</h2>
+            <div class="card-content">
                 <div class="role-item">
                     <h3>Core Skills</h3>
                     <p>Python | C++ | JavaScript</p>
@@ -242,14 +202,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- More cards will be added here -->
     </div>
-
-    <!-- Next sections to be added:
-    1. Projects showcase
-    2. Dataset exploration
-    3. ML/DL hierarchy
-    4. Research & Publications
-    5. Achievements -->
-
 </body>
 </html>
