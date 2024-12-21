@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AV5SCS - Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        
+        header {
+            background-color: #161b22;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid #30363d;
+        }
+
+        nav {
+            background-color: #238636;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: #161b22;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #161b22;
+            color: #8b949e;
+            border-top: 1px solid #30363d;
+            margin-top: 2rem;
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Software Developer</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm a developer passionate about creating efficient and user-friendly solutions. I enjoy working with modern technologies and solving interesting problems.</p>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Project 1</h3>
+                    <p>A brief description of your first project. What technologies did you use? What problems did it solve?</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project 2</h3>
+                    <p>Description of another project you're proud of. What makes it special?</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out to me on <a href="https://github.com/AV5SCS">GitHub</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 AV5SCS - Built with GitHub Pages</p>
+    </footer>
+</body>
+</html>
