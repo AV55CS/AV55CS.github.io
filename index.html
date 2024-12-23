@@ -77,15 +77,36 @@
 
         .profile-container h1 {
             font-size: 2.5rem;
-            color: var(--light);
-            margin: 0.5rem 0;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            background: linear-gradient(
+                120deg,
+                #4a90e2 0%,
+                #834d9b 25%,
+                #d13a7a 50%,
+                #834d9b 75%,
+                #4a90e2 100%
+            );
+            background-size: 400% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 8s linear infinite;
+            position: relative;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .profile-container p {
             font-size: 1.2rem;
-            color: var(--light);
-            opacity: 0.9;
+            background: linear-gradient(
+                to right,
+                rgba(255,255,255,1),
+                rgba(255,255,255,0.8),
+                rgba(255,255,255,1)
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 6s linear infinite;
             margin: 0;
         }
 
@@ -126,6 +147,45 @@
             font-weight: 500;
         }
 
+        @keyframes shine {
+            0% {
+                background-position: 0% center;
+            }
+            100% {
+                background-position: 400% center;
+            }
+        }
+        
+        /* Add this extra glow effect */
+        .profile-container h1::after {
+            content: 'AVINASH KUMAR SHARMA';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(120deg, #4a90e2, #834d9b, #d13a7a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: blur(8px);
+            opacity: 0;
+            animation: glow 4s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            0% {
+                opacity: 0;
+                filter: blur(8px);
+            }
+            50% {
+                opacity: 0.5;
+                filter: blur(12px);
+            }
+            100% {
+                opacity: 0;
+                filter: blur(8px);
+            }
+        }
         /* Hide everything except title by default */
         .card-subtitle,
         .card-content {
@@ -339,7 +399,6 @@
             <div class="profile-container">
                 <img src="https://private-user-images.githubusercontent.com/121622662/397951007-c8092032-723f-4772-b90f-33866020990a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzQ5NTg5MzUsIm5iZiI6MTczNDk1ODYzNSwicGF0aCI6Ii8xMjE2MjI2NjIvMzk3OTUxMDA3LWM4MDkyMDMyLTcyM2YtNDc3Mi1iOTBmLTMzODY2MDIwOTkwYS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMjIzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTIyM1QxMjU3MTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xOWQ4Y2MzNjQ1YjU5YTc3ZDQ3OWY4MDRmODhlNjE1NjQyMGY2N2Y5MTk2NjU0ZjA0N2ZhYjYyY2VjMjA5MWQ2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.1Sd020KM-9rst7WbNFhXMXCUAv3JgrW5flxwWFJYxC0" alt="Avinash Kumar Sharma" class="profile-pic">
                 <div class="profile-info">
-                    <img src="https://private-user-images.githubusercontent.com/121622662/397951218-429e2fd8-6c8f-4fd9-b4ba-264902ef86a0.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzQ5NTg5MzUsIm5iZiI6MTczNDk1ODYzNSwicGF0aCI6Ii8xMjE2MjI2NjIvMzk3OTUxMjE4LTQyOWUyZmQ4LTZjOGYtNGZkOS1iNGJhLTI2NDkwMmVmODZhMC5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MTIyMyUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDEyMjNUMTI1NzE1WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9ODJkYjU3M2EzOGJiYzViNjlkNGE2YmFhNDUwMDU1NmM5MmU2MGIwMGZlYTc0YzhlNTU2NmJmMTRmOTI5YzkzOCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.V-A2cXOf0E1oIUHyUgvw-BIkjh1iQUxICOJ7-qS7MfM" alt="IIT Madras Logo" class="iit-logo">
                     <h1>Avinash Kumar Sharma</h1>
                     <p>Data Science & AI Researcher | IIT Madras</p>
                 </div>
