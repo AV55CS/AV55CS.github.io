@@ -390,7 +390,582 @@
                 gap: 1.5rem;
             }
         }
+        
+        
+        
+            .experience-box {
+                background: linear-gradient(145deg, #1c1e21, #1f2225);
+                border: 1px solid rgba(74, 144, 226, 0.1);
+                border-radius: 0;
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .experience-box::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(90deg, #4a90e2, #834d9b, transparent);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            
+            .experience-box:hover::before {
+                opacity: 1;
+            }
+            
+            .role-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+            
+            .role-header h3 {
+                font-size: 1.4rem;
+                color: var(--light);
+                background: linear-gradient(90deg, #4a90e2, #834d9b);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            
+            .timeline {
+                background: rgba(74, 144, 226, 0.1);
+                padding: 0.3rem 0.8rem;
+                border-radius: 4px;
+                font-size: 0.9rem;
+                color: #4a90e2;
+            }
+            
+            .company-badge {
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+                margin-bottom: 1rem;
+                padding: 0.5rem;
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 4px;
+                width: fit-content;
+            }
+            
+            .keyword-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.8rem;
+                margin-top: 1rem;
+            }
+            
+            .keyword {
+                background: rgba(74, 144, 226, 0.1);
+                color: #4a90e2;
+                padding: 0.4rem 0.8rem;
+                border-radius: 4px;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+            }
+            
+            .keyword:hover {
+                background: rgba(74, 144, 226, 0.2);
+                transform: translateY(-2px);
+            }
+            
+            .description {
+                color: #a8a8a8;
+                line-height: 1.6;
+            }
+            
+            /* Animation for boxes */
+            .experience-box:hover {
+                transform: translateY(-5px);
+                border-color: #4a90e2;
+                box-shadow: 0 5px 15px rgba(74, 144, 226, 0.1);
+            }
+            
+            /* Special styling for current role */
+            .experience-box.current {
+                border-left: 4px solid #4a90e2;
+            }
+/* Technical Arsenal Styles */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.tech-section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    background: linear-gradient(90deg, #4a90e2, #834d9b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #4a90e2, transparent);
+}
+
+.tech-box {
+    background: #1c1e21;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tech-box::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #4a90e2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-box:hover::before {
+    opacity: 1;
+}
+
+.tech-box h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.tech-box p {
+    color: #a8a8a8;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: rgba(74, 144, 226, 0.1);
+    color: #4a90e2;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.tech-box.premium {
+    background: linear-gradient(145deg, #1c1e21, #1f2225);
+    border: 1px solid rgba(74, 144, 226, 0.1);
+}
+
+.tech-box.premium h4 {
+    background: linear-gradient(90deg, #4a90e2, #834d9b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Master Thesis Styles */
+.thesis-title-box {
+    background: #1c1e21;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    border-radius: 0;
+    border-left: 4px solid #4a90e2;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #4a90e2, #834d9b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.active-research {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #a8a8a8;
+}
+
+.pulse {
+    width: 10px;
+    height: 10px;
+    background: #4a90e2;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+/* Research Grid Layout */
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Research Box Styles */
+.research-box {
+    background: #1c1e21;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.research-box::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #4a90e2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.research-box:hover::before {
+    opacity: 1;
+}
+
+.box-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.box-number {
+    font-size: 1.5rem;
+    color: #4a90e2;
+    font-weight: bold;
+}
+
+.box-header h4 {
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+/* Tech Lists and Chips */
+.tech-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-list li {
+    color: #a8a8a8;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.tech-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #4a90e2;
+}
+
+.tech-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tech-chips span {
+    background: rgba(74, 144, 226, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 0;
+    font-size: 0.9rem;
+    color: #4a90e2;
+    transition: all 0.3s ease;
+}
+
+.tech-chips span:hover {
+    background: rgba(74, 144, 226, 0.2);
+    transform: translateX(5px);
+}
+
+/* Dataset Grid */
+.dataset-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.dataset-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.dataset-item:hover {
+    background: rgba(74, 144, 226, 0.1);
+    transform: translateX(5px);
+}
+
+.dataset-name {
+    color: #fff;
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.dataset-type {
+    color: #4a90e2;
+    font-size: 0.9rem;
+}
+
+/* Architecture Section */
+/* Conference Badges */
+.conference-badges {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    background: #1e2227;
+    color: #4a90e2;
+    padding: 0.5rem 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.badge.glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(74, 144, 226, 0.2),
+        transparent
+    );
+    animation: shine 3s infinite;
+}
+
+/* Architecture Categories */
+.arch-categories {
+    display: grid;
+    gap: 2rem;
+}
+
+.arch-card {
+    background: #1c1e21;
+    padding: 1.5rem;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.arch-card:hover {
+    border-left-color: #4a90e2;
+    transform: translateX(10px);
+    background: #1e2227;
+}
+
+.arch-card h5 {
+    color: #4a90e2;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Model Items */
+.model-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.model-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background: rgba(74, 144, 226, 0.05);
+    transition: all 0.3s ease;
+}
+
+.model-item:hover {
+    background: rgba(74, 144, 226, 0.1);
+    transform: translateX(5px);
+}
+
+.model-name {
+    color: #fff;
+    font-weight: 500;
+}
+
+.model-desc {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Tech Pills */
+.tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tech-pills span {
+    background: rgba(74, 144, 226, 0.1);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: #4a90e2;
+    transition: all 0.3s ease;
+}
+
+.tech-pills span:hover {
+    background: rgba(74, 144, 226, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Pipeline Steps */
+.pipeline-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    background: rgba(74, 144, 226, 0.05);
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    background: rgba(74, 144, 226, 0.1);
+    transform: translateX(5px);
+}
+
+.step-number {
+    background: #4a90e2;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.step-desc {
+    color: #a8a8a8;
+}
+
+
+/* Applications Section */
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.app-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.app-card.new {
+    border-left: 4px solid #4a90e2;
+}
+
+.app-card h5 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.app-card ul {
+    list-style: none;
+    padding: 0;
+    color: #a8a8a8;
+}
+
+.app-card ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.app-card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #4a90e2;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(74, 144, 226, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dataset-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .dataset-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .thesis-title-box {
+        padding: 1.5rem;
+    }
+    
+    .gradient-text {
+        font-size: 2rem;
+    }
+}
             </style>
+            
+            
+
 </head>
 <body>
     <!-- Header Section -->
@@ -411,27 +986,235 @@
        <!-- Main Cards Section -->
     <div class="section-container">
         <!-- First Row -->
-        <div class="cards-row">
-            <div class="flash-card">
-                <h2 class="card-title">Experience Journey</h2>
-                <p class="card-subtitle">Your professional journey and experiences</p>
-                <div class="card-content">
-                    <p>Current: Research Intern</p>
-                    <p>Walmart Center of Excellence</p>
-                    <h3>Previous Roles</h3>
-                    <p>District Programming Officer</p>
-                    <p>Project Trainee at Neurapses</p>
-                </div>
-            </div>
-            <div class="flash-card">
-                <h2 class="card-title">Technical Arsenal</h2>
-                <p class="card-subtitle">Your technical skills and expertise</p>
-                <div class="card-content">
-                    <!-- Add content here -->
-                </div>
-            </div>
-        </div>
-
+          <div class="flash-card">
+              <h2 class="card-title">Experience Journey</h2>
+              <p class="card-subtitle">My Professional Voyage in Tech & Research</p>
+              <div class="card-content">
+                  <!-- Current Role -->
+                  <div class="experience-box current">
+                      <div class="role-header">
+                          <h3>Research Intern</h3>
+                          <span class="timeline">Present</span>
+                      </div>
+                      <div class="company-badge">
+                          
+                          <span>Walmart Centre for Tech Excellence</span>
+                      </div>
+                      <div class="role-content">
+                          <p class="description">Developing cutting-edge computer vision solutions focusing on Industrial Safety and Quality</p>
+                          <div class="keyword-container">
+                              <span class="keyword">Computer Vision</span>
+                              <span class="keyword">Deep Learning</span>
+                              <span class="keyword">Industrial AI</span>
+                          </div>
+                      </div>
+                  </div>
+          
+                  <!-- Freelancing Role -->
+                  <div class="experience-box">
+                      <div class="role-header">
+                          <h3>Freelance Developer</h3>
+                          <span class="timeline">06/2022 - 02/2023</span>
+                      </div>
+                      <div class="company-badge">
+                          <span>Freelance Team, Kolkata</span>
+                      </div>
+                      <div class="role-content">
+                          <p class="description">Led development of web applications and data analysis solutions for various clients</p>
+                          <div class="keyword-container">
+                              <span class="keyword">Web Development</span>
+                              <span class="keyword">Data Analysis</span>
+                              <span class="keyword">SQL</span>
+                              <span class="keyword">JavaScript</span>
+                          </div>
+                      </div>
+                  </div>
+          
+                  <!-- District Officer Role -->
+                  <div class="experience-box">
+                      <div class="role-header">
+                          <h3>District Programming Officer</h3>
+                          <span class="timeline">04/2021 - 11/2021</span>
+                      </div>
+                      <div class="company-badge">
+                          
+                          <span>District Heatlh Society, Bihar</span>
+                      </div>
+                      <div class="role-content">
+                          <p class="description">Led digital health initiatives across 13 blocks, managing CoWIN portal and oxygen supply chain</p>
+                          <div class="keyword-container">
+                              <span class="keyword">Healthcare Tech</span>
+                              <span class="keyword">Data Management</span>
+                              <span class="keyword">Supply Chain</span>
+                              <span class="keyword">MIS Reporting</span>
+                          </div>
+                      </div>
+                  </div>
+          
+                  <!-- Project Trainee Role -->
+                  <div class="experience-box">
+                      <div class="role-header">
+                          <h3>Project Trainee</h3>
+                          <span class="timeline">02/2018 - 05/2018</span>
+                      </div>
+                      <div class="company-badge">
+                          
+                          <span>Neurapses Technologies, Howrah </span>
+                      </div>
+                      <div class="role-content">
+                          <p class="description">Developed advanced OCR spell-checking system for processing customer invoice data</p>
+                          <div class="keyword-container">
+                              <span class="keyword">OCR</span>
+                              <span class="keyword">BK-trees</span>
+                              <span class="keyword">Algorithm Design</span>
+                              <span class="keyword">Data Structures</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+            
+          <div class="flash-card">
+              <h2 class="card-title">Technical Arsenal</h2>
+              <p class="card-subtitle">My Technology Playground</p>
+              <div class="card-content">
+                  <div class="tech-grid">
+                      <!-- AI & ML Stack -->
+                      <div class="tech-section">
+                          <h3 class="section-title">AI & ML Stack</h3>
+                          <div class="tech-items">
+                              <div class="tech-box">
+                                  <h4>PyTorch</h4>
+                                  <p>Deep Learning & Speech Recognition</p>
+                                  <div class="tech-tags">
+                                      <span class="tag">Deep Learning</span>
+                                      <span class="tag">Speech</span>
+                                  </div>
+                              </div>
+                              <div class="tech-box">
+                                  <h4>Scikit-learn</h4>
+                                  <p>Machine Learning & Analytics</p>
+                                  <div class="tech-tags">
+                                      <span class="tag">ML</span>
+                                      <span class="tag">Analytics</span>
+                                  </div>
+                              </div>
+                              <div class="tech-box">
+                                  <h4>Hugging Face</h4>
+                                  <p>Transformers & NLP</p>
+                                  <div class="tech-tags">
+                                      <span class="tag">NLP</span>
+                                      <span class="tag">Transformers</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+          
+                      <!-- Core Languages -->
+                      <div class="tech-section">
+                          <h3 class="section-title">Core Languages</h3>
+                          <div class="tech-items">
+                              <div class="tech-box">
+                                  <h4>Python</h4>
+                                  <div class="tech-tags">
+                                      <span class="tag">ML/DL</span>
+                                      <span class="tag">Data Science</span>
+                                      <span class="tag">Scripting</span>
+                                  </div>
+                              </div>
+                              <div class="tech-box">
+                                  <h4>C/C++</h4>
+                                  <div class="tech-tags">
+                                      <span class="tag">DSA</span>
+                                      <span class="tag">System Programming</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+          
+                      <!-- Web Technologies -->
+                      <div class="tech-section">
+                          <h3 class="section-title">Web Stack</h3>
+                          <div class="tech-items">
+                              <div class="tech-box">
+                                  <h4>Frontend</h4>
+                                  <div class="tech-tags">
+                                      <span class="tag">HTML</span>
+                                      <span class="tag">CSS</span>
+                                      <span class="tag">JavaScript</span>
+                                  </div>
+                              </div>
+                              <div class="tech-box">
+                                  <h4>Database</h4>
+                                  <div class="tech-tags">
+                                      <span class="tag">MySQL</span>
+                                      <span class="tag">UQL</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+          
+                      <!-- Cloud Platform -->
+                      <div class="tech-section">
+                          <h3 class="section-title">Cloud Platform</h3>
+                          <div class="tech-items">
+                              <div class="tech-box premium">
+                                  <h4>IBM Watsonx AI</h4>
+                                  <div class="tech-tags">
+                                      <span class="tag">AI Platform</span>
+                                  </div>
+                              </div>
+                              <div class="tech-box premium">
+                                  <h4>Grafana Cloud</h4>
+                                  <div class="tech-tags">
+                                      <span class="tag">Visualization</span>
+                                      <span class="tag">Analytics</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+          
+                      <!-- Development Tools -->
+                      <div class="tech-section">
+                          <h3 class="section-title">Dev Tools</h3>
+                          <div class="tech-items">
+                              <div class="tech-box">
+                                  <h4>Core Tools</h4>
+                                  <div class="tech-tags">
+                                      <span class="tag">Git</span>
+                                      <span class="tag">VSCode</span>
+                                      <span class="tag">LaTeX</span>
+                                      <span class="tag">Postman</span>
+                                  </div>
+                              </div>
+                              <div class="tech-box">
+                                  <h4>Data Tools</h4>
+                                  <div class="tech-tags">
+                                      <span class="tag">Anaconda</span>
+                                      <span class="tag">OCR</span>
+                                      <span class="tag">Streamlit</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+          
+                      <!-- Operating Systems -->
+                      <div class="tech-section">
+                          <h3 class="section-title">Operating Systems</h3>
+                          <div class="tech-items">
+                              <div class="tech-box">
+                                  <h4>Environments</h4>
+                                  <div class="tech-tags">
+                                      <span class="tag">Windows</span>
+                                      <span class="tag">Linux</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+         
         <!-- Second Row -->
         <div class="cards-row">
             <div class="flash-card">
@@ -441,82 +1224,444 @@
                     <!-- Add content here -->
                 </div>
             </div>
+            <!-- Achievements Section -->
             <div class="flash-card">
                 <h2 class="card-title">Achievements</h2>
-                <p class="card-subtitle">Your notable achievements and awards</p>
+                <p class="card-subtitle">Global Recognition & Awards</p>
                 <div class="card-content">
-                    <!-- Add content here -->
+                    <!-- ICASSP Achievement -->
+                    <div class="experience-box">
+                        <div class="role-header">
+                            <h3>ICASSP 2024 Challenge</h3>
+                            <span class="timeline">2024</span>
+                        </div>
+                        <div class="company-badge">
+                            <span>12th Rank Globally</span>
+                        </div>
+                        <div class="role-content">
+                            <p class="description">EEG Music Emotion Recognition Challenge - Outperformed baseline models SyncNet and EEGChannelNet</p>
+                            <div class="keyword-container">
+                                <span class="keyword">EEG Analysis</span>
+                                <span class="keyword">Deep Learning</span>
+                                <span class="keyword">Music Recognition</span>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Dementia Detection Achievement -->
+                    <div class="experience-box">
+                        <div class="role-header">
+                            <h3>Speech-based Dementia Detection</h3>
+                            <span class="timeline">2024</span>
+                        </div>
+                        <div class="company-badge">
+                            <span>22nd Rank Globally</span>
+                        </div>
+                        <div class="role-content">
+                            <p class="description">ICASSP 2024 Challenge for classification task</p>
+                            <div class="keyword-container">
+                                <span class="keyword">Healthcare AI</span>
+                                <span class="keyword">Speech Analysis</span>
+                                <span class="keyword">Classification</span>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- IBM Achievement -->
+                    <div class="experience-box">
+                        <div class="role-header">
+                            <h3>IBM TechXchange Hackathon</h3>
+                            <span class="timeline">September 2024</span>
+                        </div>
+                        <div class="company-badge">
+                            <span>Top 100 Globally</span>
+                        </div>
+                        <div class="role-content">
+                            <p class="description">Pre-Conference watsonx Hackathon qualification with innovative solutions</p>
+                            <div class="keyword-container">
+                                <span class="keyword">IBM Watsonx</span>
+                                <span class="keyword">AI Development</span>
+                                <span class="keyword">Innovation</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+
 
         <!-- Third Row -->
-        <div class="cards-row">
-            <div class="flash-card">
-                <h2 class="card-title">Current Participation</h2>
-                <p class="card-subtitle">Your ongoing projects and activities</p>
-                <div class="card-content">
-                    <!-- Add content here -->
+</div>  <!-- This closes the Second Row cards-row -->
+
+<!-- Third Row -->
+<div class="cards-row">
+<div class="flash-card">
+    <h2 class="card-title">Current Participation</h2>
+    <p class="card-subtitle">Ongoing Research Activities</p>
+    <div class="card-content">
+        <!-- Interspeech Participation -->
+        <div class="experience-box">
+            <div class="role-header">
+                <h3>Interspeech 2025 Challenges</h3>
+                <span class="timeline">Current</span>
+            </div>
+            <div class="role-content">
+                <p class="description">Actively participating in multiple challenges:</p>
+                <div class="keyword-container">
+                    <span class="keyword">Speech Emotion Recognition</span>
+                    <span class="keyword">SpeechWellness</span>
+                    <span class="keyword">URGENT Speech Enhancement</span>
                 </div>
             </div>
-            <div class="flash-card">
-                <h2 class="card-title">Research Publications</h2>
-                <p class="card-subtitle">Your research work and publications</p>
-                <div class="card-content">
-                    <!-- Add content here -->
+        </div>
+
+        <!-- Research Internship -->
+        <div class="experience-box">
+            <div class="role-header">
+                <h3>Walmart Research Internship</h3>
+                <span class="timeline">Present</span>
+            </div>
+            <div class="company-badge">
+                <span>Walmart Centre for Tech Excellence</span>
+            </div>
+            <div class="role-content">
+                <p class="description">Working on computer vision solutions for defect detection and industrial safety</p>
+                <div class="keyword-container">
+                    <span class="keyword">Computer Vision</span>
+                    <span class="keyword">Industrial AI</span>
+                    <span class="keyword">Safety Analysis</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ongoing Research -->
+        <div class="experience-box">
+            <div class="role-header">
+                <h3>Speech Research Projects</h3>
+                <span class="timeline">2024</span>
+            </div>
+            <div class="role-content">
+                <p class="description">Investigating emotion recognition through diverse datasets and model architectures</p>
+                <div class="keyword-container">
+                    <span class="keyword">Speech Processing</span>
+                    <span class="keyword">Deep Learning</span>
+                    <span class="keyword">Feature Engineering</span>
                 </div>
             </div>
         </div>
     </div>
+</div>
+    
+<div class="flash-card">
+    <h2 class="card-title">Research Publications</h2>
+    <p class="card-subtitle">NeurIPS 2024 Contributions</p>
+    <div class="card-content">
+        <div class="experience-box">
+            <div class="role-header">
+                <h3>Layer-Importance Guided Adaptive Quantization</h3>
+                <span class="timeline">NeurIPS 2024</span>
+            </div>
+            <div class="company-badge">
+                <span>Machine Learning and Compression Workshop</span>
+            </div>
+            <div class="role-content">
+                <p class="description">Efficient Speech Emotion Recognition using adaptive quantization techniques</p>
+                <div class="keyword-container">
+                    <span class="keyword">Adaptive Quantization</span>
+                    <span class="keyword">Speech Recognition</span>
+                    <span class="keyword">Deep Learning</span>
+                </div>
+            </div>
+        </div>
 
-    <!-- Master Thesis Section -->
-    <div class="section-container">
-        <h2 class="section-title">Master Thesis</h2>
-        <div class="flash-card thesis-card">
-            <h2 class="card-title">Thesis Title</h2>
-            <p class="card-subtitle">Brief description of your thesis focus</p>
+        <div class="experience-box">
+            <div class="role-header">
+                <h3>Lightweight Neural Networks for SER</h3>
+                <span class="timeline">NeurIPS 2024</span>
+            </div>
+            <div class="company-badge">
+                <span>ENLSP Workshop</span>
+            </div>
+            <div class="role-content">
+                <p class="description">Layer-wise Adaptive Quantization for efficient emotion recognition</p>
+                <div class="keyword-container">
+                    <span class="keyword">Neural Networks</span>
+                    <span class="keyword">Model Compression</span>
+                    <span class="keyword">Speech Processing</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>  <!-- This closes the Third Row cards-row -->
+<!-- Fourth Row -->
+<!-- Master Thesis Section (Standalone) -->
+<div class="section-container">
+    <h2 class="section-title">Master Thesis Research</h2>
+    <div class="flash-card thesis-card">
+        <h2 class="card-title">Speech Emotion Recognition</h2>
+        <p class="card-subtitle">Developing Efficient Models for Emotion Analysis</p>
+        <div class="card-content">
+            <!-- Main Title Box -->
+            <div class="thesis-title-box">
+                <h3 class="gradient-text">Speech Emotion Recognition</h3>
+                <div class="active-research">
+                    <span class="pulse"></span>
+                    Active Research @ Walmart Centre for Tech Excellence
+                </div>
+            </div>
+
+            <!-- Research Areas Grid -->
+            <div class="research-grid">
+                <!-- Signal Processing -->
+                <div class="research-box">
+                    <div class="box-header">
+                        <span class="box-number">01</span>
+                        <h4>Signal Processing & Feature Engineering</h4>
+                    </div>
+                    <div class="box-content">
+                        <ul class="tech-list">
+                            <li>Preprocessing Techniques</li>
+                            <li>Feature Extraction Methods
+                                <div class="tech-chips">
+                                    <span>MFCC</span>
+                                    <span>Spectrograms</span>
+                                    <span>Mel-Scale</span>
+                                    <span>Wavelet Transform</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Datasets -->
+                <div class="research-box">
+                    <div class="box-header">
+                        <span class="box-number">02</span>
+                        <h4>Multi-Dataset Analysis</h4>
+                    </div>
+                    <div class="box-content">
+                        <div class="dataset-grid">
+                            <div class="dataset-item">
+                                <span class="dataset-name">EMODB</span>
+                                <span class="dataset-type">German</span>
+                            </div>
+                            <div class="dataset-item">
+                                <span class="dataset-name">SAVEE</span>
+                                <span class="dataset-type">English</span>
+                            </div>
+                            <div class="dataset-item">
+                                <span class="dataset-name">IEMOCAP</span>
+                                <span class="dataset-type">Interactive</span>
+                            </div>
+                            <div class="dataset-item">
+                                <span class="dataset-name">TESS</span>
+                                <span class="dataset-type">Toronto</span>
+                            </div>
+                            <div class="dataset-item">
+                                <span class="dataset-name">RAVDESS</span>
+                                <span class="dataset-type">Multimodal</span>
+                            </div>
+                            <div class="dataset-item">
+                                <span class="dataset-name">MSP Podcast</span>
+                                <span class="dataset-type">Natural</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compression Research -->
+                <div class="research-box">
+                    <div class="box-header">
+                        <span class="box-number">03</span>
+                        <h4>Model Compression & Edge Computing</h4>
+                    </div>
+                    <div class="box-content">
+                        <div class="tech-focus-areas">
+                            <div class="focus-item">
+                                <h5>Quantization</h5>
+                                <div class="tech-chips">
+                                    <span>Layer-wise</span>
+                                    <span>Adaptive</span>
+                                    <span>Dynamic Range</span>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <h5>Pruning</h5>
+                                <div class="tech-chips">
+                                    <span>Network Optimization</span>
+                                    <span>Weight Pruning</span>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <h5>Edge Deployment</h5>
+                                <div class="tech-chips">
+                                    <span>Resource Optimization</span>
+                                    <span>Mobile Deployment</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ML/DL Architecture -->
+                <div class="research-box">
+                    <div class="box-header">
+                        <span class="box-number">04</span>
+                        <h4>Advanced ML/DL Architectures</h4>
+                    </div>
+                    <div class="box-content">
+                        <!-- Conference Badges -->
+                        <div class="conference-badges">
+                            <div class="badge glow">ICASSP</div>
+                            <div class="badge glow">NeurIPS</div>
+                            <div class="badge glow">CVPR</div>
+                            <div class="badge glow">arXiv</div>
+                        </div>
+
+                        <!-- Architecture Categories -->
+                        <div class="arch-categories">
+                            <div class="arch-card">
+                                <h5>Core Model Exploration</h5>
+                                <div class="model-list">
+                                    <div class="model-item">
+                                        <span class="model-name">LSTM Networks</span>
+                                        <span class="model-desc">Temporal emotion patterns</span>
+                                    </div>
+                                    <div class="model-item">
+                                        <span class="model-name">Transformers</span>
+                                        <span class="model-desc">Attention-based processing</span>
+                                    </div>
+                                    <div class="model-item">
+                                        <span class="model-name">CNN Variants</span>
+                                        <span class="model-desc">Spectral feature learning</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Applications -->
+                <div class="research-box highlight">
+                    <div class="box-header">
+                        <span class="box-number">05</span>
+                        <h4>Domain Applications & LLM Integration</h4>
+                    </div>
+                    <div class="box-content">
+                        <div class="applications-grid">
+                            <div class="app-card">
+                                <h5>Healthcare</h5>
+                                <ul>
+                                    <li>Early Stage Dementia Detection</li>
+                                    <li>Speech Wellness Analysis</li>
+                                </ul>
+                            </div>
+                            <div class="app-card">
+                                <h5>Multimodal Analysis</h5>
+                                <ul>
+                                    <li>EEG-Audio Correlation</li>
+                                    <li>Text-Audio Fusion</li>
+                                </ul>
+                            </div>
+                            <div class="app-card new">
+                                <h5>LLM Integration</h5>
+                                <ul>
+                                    <li>Emotion-Aware Responses</li>
+                                    <li>Cross-Modal Understanding</li>
+                                    <li>Real-time Emotion Analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Course Projects Section (Standalone with Grid) -->
+<div class="section-container">
+    <h2 class="section-title">Course Projects</h2>
+    <div class="cards-row">
+        <!-- Speech Emotion Recognition Project -->
+        <div class="flash-card">
+            <h2 class="card-title">Speech Emotion Recognition</h2>
+            <p class="card-subtitle">Mar 2024 - Jun 2024</p>
             <div class="card-content">
-                <!-- Add thesis content here -->
+                <div class="experience-box">
+                    <div class="role-header">
+                        <h3>Deep Learning Project</h3>
+                        <span class="timeline">Guide: Dr. Tushar Shinde</span>
+                    </div>
+                    <div class="role-content">
+                        <p class="description">Developed emotion recognition system using LSTM and vector quantization on multi-dataset audio and features for robust classification of six emotional states.</p>
+                        <div class="keyword-container">
+                            <span class="keyword">Deep Learning</span>
+                            <span class="keyword">Speech Processing</span>
+                            <span class="keyword">Feature Engineering</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Activity Recognition Project -->
+        <div class="flash-card">
+            <h2 class="card-title">Activity Recognition</h2>
+            <p class="card-subtitle">March 2024 - July 2024</p>
+            <div class="card-content">
+                <div class="experience-box">
+                    <div class="role-header">
+                        <h3>Big Data Project</h3>
+                        <span class="timeline">Guide: Dr. Alka Bhushan</span>
+                    </div>
+                    <div class="role-content">
+                        <p class="description">Developed HAR model using PySpark for sensor data preprocessing and ML classification. Created dynamic dashboards in Grafana Cloud with UQL queries.</p>
+                        <div class="keyword-container">
+                            <span class="keyword">Big Data</span>
+                            <span class="keyword">Machine Learning</span>
+                            <span class="keyword">Data Analytics</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Course Projects Section -->
-    <div class="section-container">
-        <h2 class="section-title">Course Projects</h2>
-        <div class="cards-row">
-            <div class="flash-card">
-                <h2 class="card-title">Project One</h2>
-                <p class="card-subtitle">First major course project</p>
-                <div class="card-content">
-                    <!-- Add content here -->
-                </div>
-            </div>
-            <div class="flash-card">
-                <h2 class="card-title">Project Two</h2>
-                <p class="card-subtitle">Second major course project</p>
-                <div class="card-content">
-                    <!-- Add content here -->
+    <div class="cards-row">
+        <!-- Sentiment Analysis Project -->
+        <div class="flash-card">
+            <h2 class="card-title">Sentiment Analysis</h2>
+            <p class="card-subtitle">Oct 2023 - Dec 2023</p>
+            <div class="card-content">
+                <div class="experience-box">
+                    <div class="role-header">
+                        <h3>NLP Project</h3>
+                        <span class="timeline">Guide: Dr. Nirav Bhatt</span>
+                    </div>
+                    <div class="role-content">
+                        <p class="description">Using NLP techniques and Machine Learning models to analyze sentiments for Canva app reviews.</p>
+                        <div class="keyword-container">
+                            <span class="keyword">NLP</span>
+                            <span class="keyword">Python</span>
+                            <span class="keyword">Machine Learning</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="cards-row">
-            <div class="flash-card">
-                <h2 class="card-title">Project Three</h2>
-                <p class="card-subtitle">Third major course project</p>
-                <div class="card-content">
-                    <!-- Add content here -->
-                </div>
-            </div>
-            <div class="flash-card">
-                <h2 class="card-title">Project Four</h2>
-                <p class="card-subtitle">Fourth major course project</p>
-                <div class="card-content">
-                    <!-- Add content here -->
-                </div>
+
+        <!-- Space for Fourth Project -->
+        <div class="flash-card">
+            <h2 class="card-title">Upcoming Project</h2>
+            <p class="card-subtitle">Future Work</p>
+            <div class="card-content">
+                <!-- Content for future project -->
             </div>
         </div>
     </div>
+</div>
+
 
     <!-- Footer -->
     <footer class="footer">
