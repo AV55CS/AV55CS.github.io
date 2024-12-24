@@ -624,19 +624,23 @@
 }
 
 /* Research Grid Layout */
+/* Research Box Layout Fix */
 .research-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    margin-bottom: 2rem;
+    width: 100%; /* Ensures full width */
 }
 
-/* Research Box Styles */
 .research-box {
     background: #1c1e21;
     padding: 2rem;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    width: 100%; /* Ensures full width */
+    margin-bottom: 2rem; /* Consistent spacing */
 }
 
 .research-box::before {
@@ -654,6 +658,11 @@
 .research-box:hover::before {
     opacity: 1;
 }
+/* Make sure research boxes stay in grid */
+.research-box.highlight {
+    grid-column: 1 / -1; /* Makes section 05 take full width */
+    margin-bottom: 0; /* Removes extra spacing */
+}
 
 .box-header {
     display: flex;
@@ -662,10 +671,14 @@
     margin-bottom: 1.5rem;
 }
 
+/* Fix for box number alignment */
 .box-number {
     font-size: 1.5rem;
     color: #4a90e2;
     font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1rem;
 }
 
 .box-header h4 {
@@ -777,9 +790,11 @@
 }
 
 /* Architecture Categories */
+/* Architecture Categories Fix */
 .arch-categories {
     display: grid;
-    gap: 2rem;
+    gap: 1.5rem;
+    width: 100%;
 }
 
 .arch-card {
@@ -890,11 +905,14 @@
 
 
 /* Applications Section */
+/* Application Grid Fix */
 .applications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    width: 100%;
 }
+
 
 .app-card {
     background: rgba(255, 255, 255, 0.03);
@@ -1398,8 +1416,8 @@
 <div class="section-container">
     <h2 class="section-title">Master Thesis Research</h2>
     <div class="flash-card thesis-card">
-        <h2 class="card-title">Speech Emotion Recognition</h2>
-        <p class="card-subtitle">Developing Efficient Models for Emotion Analysis</p>
+        <h2 class="card-title">Emotion Recognition in Speech</h2>
+        <p class="card-subtitle">Developing Efficient Models for Multi-Dataset Analysis</p>
         <div class="card-content">
             <!-- Main Title Box -->
             <div class="thesis-title-box">
@@ -1420,7 +1438,7 @@
                     </div>
                     <div class="box-content">
                         <ul class="tech-list">
-                            <li>Preprocessing Techniques</li>
+                            <li>Advanced Preprocessing Techniques</li>
                             <li>Feature Extraction Methods
                                 <div class="tech-chips">
                                     <span>MFCC</span>
@@ -1504,42 +1522,43 @@
                 </div>
 
                 <!-- ML/DL Architecture -->
-                <div class="research-box">
-                    <div class="box-header">
-                        <span class="box-number">04</span>
-                        <h4>Advanced ML/DL Architectures</h4>
-                    </div>
-                    <div class="box-content">
-                        <!-- Conference Badges -->
-                        <div class="conference-badges">
-                            <div class="badge glow">ICASSP</div>
-                            <div class="badge glow">NeurIPS</div>
-                            <div class="badge glow">CVPR</div>
-                            <div class="badge glow">arXiv</div>
-                        </div>
+  <!-- ML/DL Architecture -->
+<div class="research-box">
+    <div class="box-header">
+        <span class="box-number">04</span>
+        <h4>Research Methodology</h4>
+    </div>
+    <div class="box-content">
+        <!-- Research Process Badges -->
+        <div class="conference-badges">
+            <div class="badge glow">Literature Survey</div>
+            <div class="badge glow">Paper Reviews</div>
+            <div class="badge glow">Advisor Discussions</div>
+            <div class="badge glow">Weekly Updates</div>
+        </div>
 
-                        <!-- Architecture Categories -->
-                        <div class="arch-categories">
-                            <div class="arch-card">
-                                <h5>Core Model Exploration</h5>
-                                <div class="model-list">
-                                    <div class="model-item">
-                                        <span class="model-name">LSTM Networks</span>
-                                        <span class="model-desc">Temporal emotion patterns</span>
-                                    </div>
-                                    <div class="model-item">
-                                        <span class="model-name">Transformers</span>
-                                        <span class="model-desc">Attention-based processing</span>
-                                    </div>
-                                    <div class="model-item">
-                                        <span class="model-name">CNN Variants</span>
-                                        <span class="model-desc">Spectral feature learning</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Research Content -->
+        <div class="research-content">
+            <div class="research-item">
+                <h5>Literature Review</h5>
+                <p class="desc">ICASSP, NeurIPS, CVPR papers on speech processing</p>
+            </div>
+            <div class="research-item">
+                <h5>Architecture Analysis</h5>
+                <p class="desc">Comparing LSTM, Transformers, CNN approaches</p>
+            </div>
+            <div class="research-item">
+                <h5>Implementation Path</h5>
+                <div class="progress-steps">
+                    <div class="step">Paper Survey & Architecture</div>
+                    <div class="step">Implementation & Testing</div>
+                    <div class="step">Results & Feedback</div>
+                    <div class="step">Documentation</div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <!-- Applications -->
                 <div class="research-box highlight">
@@ -1578,7 +1597,6 @@
         </div>
     </div>
 </div>
-
 <!-- Course Projects Section (Standalone with Grid) -->
 <div class="section-container">
     <h2 class="section-title">Course Projects</h2>
@@ -1677,7 +1695,7 @@
                                 <path d="m22 4-10 8L2 4"></path>
                             </svg>
                         </div>
-                        your.email@example.com
+                        zda23m011@iitmz.ac.in
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -1685,7 +1703,7 @@
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
                         </div>
-                        +91 XXXXXXXXXX
+                        +91 701112304
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -1694,7 +1712,7 @@
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
                         </div>
-                        Your City, India
+                        Zanzibar,Tanzania
                     </div>
                 </div>
             </div>
